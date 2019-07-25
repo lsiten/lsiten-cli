@@ -1,5 +1,7 @@
+// 主的流程控制
 let apply = (action, ...args) => {
-    require(`./actions/${action}`)(...args)
-}
+    //babel-env
+    require(`./actions/${action}`)(...args);
+};
 
-export default apply
+export default apply;
