@@ -64,7 +64,7 @@ program.on('-h', help);
 program.on('--help', help);
 program.version(VERSION, '-V --version').parse(process.argv);
 
-// eos 不带参数时
+// lsiten 不带参数时
 if (!process.argv.slice(2).length) {
     program.outputHelp(make_green);
 }
