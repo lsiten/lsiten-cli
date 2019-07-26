@@ -1,9 +1,11 @@
 import { downloadLocal } from '../untils/get';
+import {copyDir} from '../untils/file'
 import ora from 'ora';
 import inquirer from 'inquirer';
 import fs from 'fs';
 import chalk from 'chalk';
 import symbol from 'log-symbols';
+import {dirname, resolve} from 'path'
 
 let init = async (templateName, projectName) => {
     //项目不存在
@@ -35,6 +37,7 @@ let init = async (templateName, projectName) => {
                     //修改项目文件夹中 package.json 文件
                     fs.writeFileSync(fileName, JSON.stringify(json, null, '\t'), 'utf-8');
                     console.log(symbol.success, chalk.green('Project initialization finished!'));
+                    copyDir(resolve(__dirname, '../../.lib'), resolve(`${projectName}/.lib`));
                 }
             }, () => {
                 loading.fail();

@@ -14,7 +14,7 @@ let action = async (...args) => {
   if (exit) {
     exec(`node ${startFile}`, (err, stdout, stderr) => {
       if (err) {
-        console.log(symbol.error, chalk.red('执行错误...'))
+        console.log(symbol.error, chalk.red(`执行错误...${err}`))
         return false
       }
       console.log(symbol.success, chalk.green(`开始执行:\n ${stdout}`));
