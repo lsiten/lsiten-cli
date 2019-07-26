@@ -7,9 +7,10 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\"",
     "compile": "babel src -d dist",
-    "watch": "npm run compile -- --watch"
+    "watch": "npm run compile -- --watch",
+    "start": "npm run test"
   },
   "keywords": [
     "自定义脚手架"
@@ -26,5 +27,9 @@
     "inquirer": "^6.5.0",
     "log-symbols": "^3.0.0",
     "ora": "^3.4.0"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "execSync": "^1.0.2"
   }
 }

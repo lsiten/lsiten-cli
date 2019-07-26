@@ -16,9 +16,15 @@ let actionMap = {
             'lsiten init templateName projectName'
         ]
     },
+    start: {
+        description: 'start project',
+        usages: [
+            'lsiten start'
+        ]
+    },
     config: {
         alias: 'cfg',
-        description: 'config .lsitensrc',
+        description: 'config .lsitenrc',
         usages: [
             'lsiten config set <k> <v>',
             'lsiten config get <k>',
@@ -40,6 +46,9 @@ Object.keys(actionMap).forEach((action) => {
                 apply(action, ...process.argv.slice(3));
                 break;
             case 'init':
+                apply(action, ...process.argv.slice(3));
+                break;
+            case 'start':
                 apply(action, ...process.argv.slice(3));
                 break;
             default:
